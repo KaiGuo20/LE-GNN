@@ -45,7 +45,7 @@ class GraphConvolution_LEGNN(torch.nn.Module):
         support = torch.sparse.mm(adj, input)
         output = (1 - self.al) * support + self.al * h0
         if self.residual:
-            output = output + 0.1*input
+            output = output + 0*input
         return output
     def __repr__(self):
         return self.__class__.__name__ + ' (' \
